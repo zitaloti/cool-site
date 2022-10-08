@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col" style="background-color: pink;">
+            <h1>Quadratic equation</h1>
+            <p>
+                <input type="text" id="a">
+                <input type="text" id="b">
+                <input type="text" id="c">
+                <button onclick="solve();">Solve</button>
+            </p>
+            <p id="quadratic-equation-result"></p>
+        </div>
+        <div class="col" style="background-color: rgb(230, 197, 154);">
+            <h1>Random</h1>
+            <p>
+                <input type="text" id="x">
+                <input type="text" id="y">
+                <button onclick="generate();">Generate</button>
+            </p>
+            <p id="random-result"></p>
+        </div>
+        <div class="col row" style="background-color: beige;">
+            <h1 style="width: 100%;">Теорема Піфагора</h1>
+            <div class="col4">
+                <span style="width: 20%;">a:</span>
+                <input type="number" id="ca" style="width: 80%;">
+            </div>
+            <div class="col4">
+                <span style="width: 20%;">b:</span>
+                <input type="number" id="cb" style="width: 80%;">
+            </div>
+            <div class="col4">
+                <span style="width: 20%;">c:</span>
+                <input type="number" id="cc" style="width: 80%;">
+            </div>
+            <div class="col4">
+                <button onclick="pifagor();" style="width: 100%;">Solve</button>
+            </div>
+            <p id="pifagor-result"></p>
+        </div>
+        <div class="col" style="background-color: plum;">
+            <h1>Area</h1>
+            <div>
+                <select id="var" onchange="changeFigure();">
+                    <option value="circle">Круг</option>
+                    <option value="rectangle">Прямокутник</option>
+                    <option value="triangle">Трикутниик</option>
+                </select>
+            </div>
+            <input type="text" id="sa">
+            <input type="text" id="sb" disabled>
+            <input type="text" id="sc" disabled>
+            <button onclick="area();">Solve</button>
+            <p id="area-result"></p>
+        </div>
+        <div class="col" style="background-color: rosybrown;">
+            <h1>Дроби</h1>
+            <div>
+                <input type="text" id="f1" >
+                <select id="var1">
+                    <option value="plus">+</option>
+                    <option value="minus">-</option>
+                    <option value="mult">*</option>
+                    <option value="div">/</option>
+                </select>
+                <input type="text" id="f2" >
+                <button onclick="fraction();">=</button>
+                <span id="fraction-result"></span>
+            </div>
+        </div>
+        <div class="col" style="background-color: gold;">
+            <h1>Super seckreti</h1>
+            <p>
+                <input type="text" id="t">
+                <input type="text" id="k">
+                <button onclick="shifr();">Shifrovat</button>
+            </p>
+            <p id="shifr-result"></p>
+        </div>
+    </div>
+    <script src="ret.js"></script>
+</body>
+
+</html>
