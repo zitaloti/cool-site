@@ -5,10 +5,10 @@ function solve() {
     if (b ** 2 - 4 * a * c > 0) {
         let x1 = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / 2 * a
         let x2 = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / 2 * a
-        document.getElementById("quadratic-equation-result").innerHTML = `x1 = ${x1}, x2 = ${x2}`
+        document.getElementById("quadratic-equation-result").value = `x1 = ${x1}, x2 = ${x2}`
     }
     else {
-        document.getElementById("quadratic-equation-result").innerHTML = "D<0"
+        document.getElementById("quadratic-equation-result").value = "D<0"
     }
 }
 
@@ -16,7 +16,7 @@ function generate() {
     let x = Number(document.getElementById("x").value)
     let y = Number(document.getElementById("y").value)
     let t = Math.round(Math.random() * (y - x)) + x
-    document.getElementById("random-result").innerHTML = t
+    document.getElementById("random-result").value = t
 }
 
 function pifagor() {
@@ -76,7 +76,7 @@ function area() {
     const b = Number(document.getElementById('sb').value);
     const c = Number(document.getElementById('sc').value);
     if(a<0 || b<0 || c<0){
-        document.getElementById("area-result").innerHTML = "Ті дурачок?"
+        document.getElementById("area-result").value = "Ті sho дурачок?"
     }
     else{
     switch (selectedFigure) {
@@ -91,7 +91,7 @@ function area() {
             s = Math.sqrt(p * (p - a) * (p - b) * (p - c))
             break;
     }
-    document.getElementById("area-result").innerHTML = s
+    document.getElementById("area-result").value = s
 }
 }
 
@@ -111,7 +111,7 @@ function fraction() {
             n = f1n * f2d + f2n * f1d
             console.log(n, d)
             if (n % d == 0) {
-                document.getElementById("fraction-result").innerHTML = n / d
+                document.getElementById("fraction-result").value = n / d
             }
             else {
                 let a = n, b = d
@@ -124,14 +124,14 @@ function fraction() {
                     }
                 }
                 let nsd = a + b
-                document.getElementById("fraction-result").innerHTML = `${n / nsd}/${d / nsd}`
+                document.getElementById("fraction-result").value = `${n / nsd}/${d / nsd}`
             }
             break
         case 'minus':
             d = f1d * f2d
             n = f1n * f2d - f2n * f1d
             if (n % d == 0) {
-                document.getElementById("fraction-result").innerHTML = n / d
+                document.getElementById("fraction-result").value = n / d
             }
             else {
                 let a = n, b = d
@@ -144,14 +144,14 @@ function fraction() {
                     }
                 }
                 let nsd = a + b
-                document.getElementById("fraction-result").innerHTML = `${n / nsd}/${d / nsd}`
+                document.getElementById("fraction-result").value = `${n / nsd}/${d / nsd}`
             }
             break
         case 'mult':
             d = f1d * f2d
             n = f1n * f1n
             if (n % d == 0) {
-                document.getElementById("fraction-result").innerHTML = n / d
+                document.getElementById("fraction-result").value = n / d
             }
             else {
                 let a = n, b = d
@@ -164,14 +164,14 @@ function fraction() {
                     }
                 }
                 let nsd = a + b
-                document.getElementById("fraction-result").innerHTML = `${n / nsd}/${d / nsd}`
+                document.getElementById("fraction-result").value = `${n / nsd}/${d / nsd}`
             }
             break
         case 'div':
             d = f1d * f2n
             n = f1n * f2d
             if (n % d == 0) {
-                document.getElementById("fraction-result").innerHTML = n / d
+                document.getElementById("fraction-result").value = n / d
             }
             else {
                 let a = n, b = d
@@ -184,7 +184,7 @@ function fraction() {
                     }
                 }
                 let nsd = a + b
-                document.getElementById("fraction-result").innerHTML = `${n / nsd}/${d / nsd}`
+                document.getElementById("fraction-result").value = `${n / nsd}/${d / nsd}`
             }
     }
 }
@@ -192,7 +192,7 @@ function fraction() {
 function shifr() {
     let t = (document.getElementById('t').value);
     let k = Number(document.getElementById('k').value);
-    al = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя".split("")
+    al = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюяАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ .,!&*$@\"?#)(+_-/\\|;:\'<>{}[]".split("")
     let g = ""
     for (let s of t) {
         let h = al.indexOf(s)
