@@ -24,13 +24,13 @@
                     <span class="input-group-text">c</span>
                     <input type="number" class="form-control" id="c">
                     <input type="button" class="form-control btn" onclick="solve();" style="background-color: white;"
-                        value="Вирішити">
+                        value="Go">
             </div>
             <div class="input-group">
                 <span class="input-group-text">x1</span>
-                <input type="text" class="form-control" id="quadratic-equation-result" disabled>
+                <input type="text" class="form-control" id="quadratic-equation-result1" disabled>
                 <span class="input-group-text">x2</span>
-                <input type="text" class="form-control" id="quadratic-equation-result" disabled>
+                <input type="text" class="form-control" id="quadratic-equation-result2" disabled>
             </div>
         </div>
     </div>
@@ -43,10 +43,10 @@
                 <span class="input-group-text">b</span>
                 <input type="number" class="form-control" id="y">
                 <input type="button" class="form-control btn" onclick="generate();" style="background-color: white;"
-                    value="Генерувати">
+                    value="Go">
             </div>
             <div class="input-group">
-                <span class="input-group-text">S</span>
+                <span class="input-group-text">N</span>
                 <input type="text" class="form-control" id="random-result" disabled>
             </div>
         </div>
@@ -56,13 +56,13 @@
                 <div class="col-xl-12 h1">Теорема Піфагора</div>
                 <div class="input-group">
                     <span class="input-group-text">a</span>
-                    <input type="number" class="form-control" id="ca">
+                    <input type="number" class="form-control" id="pa">
                     <span class="input-group-text">b</span>
-                    <input type="number" class="form-control" id="cb">
+                    <input type="number" class="form-control" id="pb">
                     <span class="input-group-text">c</span>
-                    <input type="number" class="form-control" id="cc">
+                    <input type="number" class="form-control" id="pc">
                     <input type="button" class="form-control btn" onclick="pifagor();" style="background-color: white;"
-                        value="Знайти">
+                        value="Go">
                 </div>
             </div>
         </div>
@@ -78,13 +78,13 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">a</span>
-                    <input type="number" class="form-control" id="sa">
+                    <input type="number" class="form-control" id="aa">
                     <span class="input-group-text">b</span>
-                    <input type="number" class="form-control" id="sb" disabled>
+                    <input type="number" class="form-control" id="ab" disabled>
                     <span class="input-group-text">c</span>
-                    <input type="number" class="form-control" id="sc" disabled>
+                    <input type="number" class="form-control" id="ac" disabled>
                     <input type="button" class="form-control btn" onclick="area();" style="background-color: white;"
-                        value="Знайти">
+                        value="Go">
                 </div>
                 <div class="input-group">
                     <span class="input-group-text">S</span>
@@ -95,14 +95,14 @@
         <div class="col-md-6 p-3" style="background-color: beige;">
             <div class="h1 m-3">Дроби</div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="sa">
+                <input type="text" class="form-control" id="f1">
                 <select class="form-select" style="background-color: #e9ecef;" id="var1" onchange="changeFigure();">
                     <option value="plus">+</option>
                     <option value="minus">-</option>
                     <option value="mult">*</option>
                     <option value="div">/</option>
                 </select>
-                <input type="text" class="form-control" id="sb">
+                <input type="text" class="form-control" id="f2">
                 <input
                     type="button"
                     class="form-control"
@@ -118,18 +118,51 @@
                 <div class="col-xl-12 h1">Супер секрети</div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Текст</span>
-                    <input type="number" class="form-control" id="t">
+                    <input type="text" class="form-control" id="t">
                     <span class="input-group-text">Число</span>
                     <input type="number" class="form-control" id="k">
                     <input type="button" class="form-control btn" onclick="shifr();" style="background-color: white;"
-                        value="Шифрувати">
+                        value="Go">
                 </div>
                 <div class="input-group">
-                    <span class="input-group-text">Зашифроване</span>
                     <input type="text" class="form-control" id="shifr-result" disabled>
                 </div>
             </div>
     </div> 
+    <div class="col-md-6 p-3" style="background-color: beige;">
+        <div class="row">
+            <div class="col-xl-12 h1">Теорема косинусів</div>
+            <div class="input-group">
+                <span class="input-group-text">a</span>
+                <input type="number" class="form-control" id="ca">
+                <span class="input-group-text">b</span>
+                <input type="number" class="form-control" id="cb">
+                <span class="input-group-text">c</span>
+                <input type="number" class="form-control" id="cc">
+                <span class="input-group-text">α</span>
+                <input type="number" class="form-control" id="cd">
+                <input type="button" class="form-control btn" onclick="cos();" style="background-color: white;"
+                  value="Go">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 p-3" style="background-color: beige;">
+        <div class="row">
+            <div class="col-xl-12 h1">Теорема синусів</div>
+            <div class="input-group">
+                <span class="input-group-text">a</span>
+                <input type="number" class="form-control" id="sa">
+                <span class="input-group-text">α</span>
+                <input type="number" class="form-control" id="sina">
+                <span class="input-group-text">b</span>
+                <input type="number" class="form-control" id="sb">
+                <span class="input-group-text">β</span>
+                <input type="number" class="form-control" id="sinb">
+                <input type="button" class="form-control btn" onclick="sin();" style="background-color: white;"
+                  value="Go">
+            </div>
+        </div>
+    </div>
     <script src="ret.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

@@ -5,7 +5,8 @@ function solve() {
     if (b ** 2 - 4 * a * c > 0) {
         let x1 = (-b + Math.sqrt(b ** 2 - 4 * a * c)) / 2 * a
         let x2 = (-b - Math.sqrt(b ** 2 - 4 * a * c)) / 2 * a
-        document.getElementById("quadratic-equation-result").value = `x1 = ${x1}, x2 = ${x2}`
+        document.getElementById("quadratic-equation-result1").value = x1
+        document.getElementById("quadratic-equation-result2").value = x2
     }
     else {
         document.getElementById("quadratic-equation-result").value = "D<0"
@@ -20,33 +21,33 @@ function generate() {
 }
 
 function pifagor() {
-    let a = Number(document.getElementById("ca").value)
-    let b = Number(document.getElementById("cb").value)
-    let c = Number(document.getElementById("cc").value)
+    let a = Number(document.getElementById("pa").value)
+    let b = Number(document.getElementById("pb").value)
+    let c = Number(document.getElementById("pc").value)
     if(a<0 || b<0 || c<0){
-        document.getElementById("pifagor-result").innerHTML = "Ті дурачок?"
+        document.getElementById("pifagor-result").innerHTML = "Ті sho дурачок?"
     }
     else{
         if (a != 0 && b != 0) {
             c = Math.sqrt(b * b + a * a)
-            document.getElementById("cc").value = c
+            document.getElementById("pc").value = c
         }
         else if (a != 0 && c != 0) {
             b = Math.sqrt(c * c - a * a)
-            document.getElementById("cb").value = b
+            document.getElementById("pb").value = b
         }
         else if (b != 0 && c != 0) {
             a = Math.sqrt(c * c - b * b)
-            document.getElementById("ca").value = a
+            document.getElementById("pa").value = a
         }
     }
 }
 
 function changeFigure() {
     const selectedFigure = document.getElementById('var').value;
-    const aElem = document.getElementById('sa');
-    const bElem = document.getElementById('sb');
-    const cElem = document.getElementById('sc');
+    const aElem = document.getElementById('aa');
+    const bElem = document.getElementById('ab');
+    const cElem = document.getElementById('ac');
     switch (selectedFigure) {
         case 'circle':
             aElem.disabled = false;
@@ -72,9 +73,9 @@ function changeFigure() {
 function area() {
     let s;
     const selectedFigure = document.getElementById('var').value;
-    const a = Number(document.getElementById('sa').value);
-    const b = Number(document.getElementById('sb').value);
-    const c = Number(document.getElementById('sc').value);
+    const a = Number(document.getElementById('aa').value);
+    const b = Number(document.getElementById('ab').value);
+    const c = Number(document.getElementById('ac').value);
     if(a<0 || b<0 || c<0){
         document.getElementById("area-result").value = "Ті sho дурачок?"
     }
@@ -192,7 +193,7 @@ function fraction() {
 function shifr() {
     let t = (document.getElementById('t').value);
     let k = Number(document.getElementById('k').value);
-    al = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюяАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ .,!&*$@\"?#)(+_-/\\|;:\'<>{}[]".split("")
+    al = "абв.,!гґд&*$еєж@\"?зиі#)(їйк+_-лмн/\\|опр;:\'сту<>{фхцч}[]шщьюяАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ".split("")
     let g = ""
     for (let s of t) {
         let h = al.indexOf(s)
@@ -210,3 +211,56 @@ function shifr() {
     }
     document.getElementById("shifr-result").innerHTML = g
 }
+
+function cos() {
+    let a = Number(document.getElementById("ca").value)
+    let b = Number(document.getElementById("cb").value)
+    let c = Number(document.getElementById("cc").value)
+    let d = Math.cos(Number(document.getElementById("cd").value) * Math.PI / 180)
+    if(a<0 || b<0 || c<0 || d<0 ){
+        document.getElementById("cos-result").innerHTML = "Ті дурачок?"
+    }
+    else{
+        if (a != 0 && b != 0 && c!=0) {
+            d = (Math.acos((b*b+c*c-a*a)/(2*b*c)))/Math.PI*180
+            document.getElementById("cd").value =  Math.round(d)
+        }
+        else if (a != 0 && c != 0 && d != 0) {
+            b = Math.sqrt(2*b*c*d+a*a-c*c)
+            document.getElementById("cb").value = Math.round(b)
+        }
+        else if (b != 0 && c != 0 && b != 0) {
+            a = Math.sqrt(b*b+c*c-2*b*c*d)
+            document.getElementById("ca").value = Math.round(a)
+        }
+        else if (a != 0 && b != 0 && b != 0) {
+            c = Math.sqrt(2*b*c*d+a*a-b*b)
+            document.getElementById("cc").value = Math.round(c)
+        }
+    }
+}
+
+function sin() {
+    let a = Number(document.getElementById("sa").value)
+    let sina = Math.sin(Number(document.getElementById("sina").value) * Math.PI / 180)
+    let b = Number(document.getElementById("sb").value)
+    let sinb = Math.sin(Number(document.getElementById("sinb").value) * Math.PI / 180)
+        if (a != 0 && sina != 0 && b!=0) {
+            console.log(sina, sinb )
+            sinb = (Math.asin(sina*b/a))/Math.PI*180
+            document.getElementById("sinb").value =  Math.round(sinb)
+        }
+        else if (a != 0 && sinb != 0 && b!=0) {
+            sina = (Math.asin(sinb*a/b))/Math.PI*180
+            document.getElementById("sina").value =  Math.round(sina)
+        }
+        else if (b != 0 && sinb != 0 && sina != 0) {
+            a = sina*b/sinb
+            document.getElementById("sa").value = Math.round(a)
+        }
+        else if (a != 0 && sinb != 0 && sina != 0) {
+            b = sinb*a/sina
+            document.getElementById("sb").value = Math.round(b)
+        }
+    }
+
